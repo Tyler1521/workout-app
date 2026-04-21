@@ -1,0 +1,13 @@
+org\example\testing\controller\WorkoutController.class
+org\example\testing\dto\ExerciseRequest.class
+org\example\testing\repository\GameRepository.class
+org\example\testing\service\GameService.class
+org\example\testing\dto\WorkoutRequest.class
+org\example\testing\model\Game.class
+org\example\testing\dto\DashboardResponse.class
+org\example\testing\service\WorkoutService.class
+org\example\testing\security\JwtRequestFilter.class
+org\example\testing\controller\GameController.class
+org\example\testing\dto\GameRequest.class
+org\example\testing\security\JwtUtil.class
+org\example\testing\dto\GameStatsRequest.class
