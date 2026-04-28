@@ -27,6 +27,10 @@ public class DashboardService {
             double avgRebounds = games.stream().mapToInt(Game::getRebounds).average().orElse(0.0);
             double avgAssists = games.stream().mapToInt(Game::getAssists).average().orElse(0.0);
 
+            avgPoints = BigDecimal.valueOf(avgPoints).setScale(2, RoundingMode.HALF_UP).doubleValue();
+            avgRebounds = BigDecimal.valueOf(avgRebounds).setScale(2, RoundingMode.HALF_UP).doubleValue();
+            avgAssists = BigDecimal.valueOf(avgAssists).setScale(2, RoundingMode.HALF_UP).doubleValue();
+
             // Placeholder values for workouts, replace with actual logic if you have a WorkoutRepository
             int totalWorkouts = 0;
             int weeklyWorkouts = 0;
