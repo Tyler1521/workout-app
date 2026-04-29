@@ -21,7 +21,7 @@ public class GameController {
     private GameService gameService;
 
     @Operation(
-            summary = "Some JWT-protected endpoint",
+            summary = "JWT-protected endpoint",
             security = @SecurityRequirement(name = "bearerAuth")
     )
     @PostMapping("/addGame")

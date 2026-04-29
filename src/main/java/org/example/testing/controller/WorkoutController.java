@@ -26,7 +26,7 @@ public class WorkoutController {
 
 
     @Operation(
-            summary = "Some JWT-protected endpoint",
+            summary = "JWT-protected endpoint",
             security = @SecurityRequirement(name = "bearerAuth")
     )
     @PostMapping("/{id}/exercises")

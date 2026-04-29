@@ -25,7 +25,7 @@ public class AuthController {
     private UserDetailsService userDetailsService;
 
     @Operation(
-        summary = "Basic Auth endpoint",
+        summary = "Basic Auth Required",
         security = @SecurityRequirement(name = "basicAuth")
     )
     @PostMapping("/authenticate")

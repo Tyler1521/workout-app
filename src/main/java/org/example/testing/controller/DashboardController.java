@@ -17,7 +17,7 @@ public class DashboardController {
     private DashboardService dashboardService;
 
     @Operation(
-        summary = "Some JWT-protected endpoint",
+        summary = "JWT-protected endpoint",
         security = @SecurityRequirement(name = "bearerAuth")
     )
     @GetMapping
