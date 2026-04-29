@@ -1,5 +1,7 @@
 package org.example.testing.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.extern.slf4j.Slf4j;
 import org.example.testing.dto.GameRequest;
 import org.example.testing.dto.GameStatsRequest;
@@ -12,16 +14,16 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@Operation(
-    summary = "Some JWT-protected endpoint",
-    security = @SecurityRequirement(name = "bearerAuth")
-)
 @RequestMapping("/games")
 public class GameController {
 
     @Autowired
     private GameService gameService;
 
+    @Operation(
+            summary = "Some JWT-protected endpoint",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
     @PostMapping("/addGame")
     public String addGame(@RequestBody GameRequest request) {
         return gameService.addGame(request);
@@ -29,6 +31,10 @@ public class GameController {
     }
 
 
+    @Operation(
+            summary = "Some JWT-protected endpoint",
+            security = @SecurityRequirement(name = "bearerAuth")
+    )
     @GetMapping("/stats")
     public List<Game> getGameStats() {
         return gameService.getGameStats();
