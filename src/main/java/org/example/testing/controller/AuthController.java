@@ -22,6 +22,10 @@ public class AuthController {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Operation(
+        summary = "Basic Auth endpoint",
+        security = @SecurityRequirement(name = "basicAuth")
+    )
     @PostMapping("/authenticate")
     public String createAuthenticationToken(HttpServletRequest request) {
         try {

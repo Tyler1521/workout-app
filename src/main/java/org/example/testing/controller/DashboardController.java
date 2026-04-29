@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
+@Operation(
+    summary = "Some JWT-protected endpoint",
+    security = @SecurityRequirement(name = "bearerAuth")
+)
 @RequestMapping("/api/dashboard")
 public class DashboardController {
 

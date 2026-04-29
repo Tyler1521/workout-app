@@ -12,6 +12,10 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@Operation(
+    summary = "Some JWT-protected endpoint",
+    security = @SecurityRequirement(name = "bearerAuth")
+)
 @RequestMapping("/games")
 public class GameController {
 

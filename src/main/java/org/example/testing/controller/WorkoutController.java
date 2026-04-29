@@ -7,6 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Operation(
+    summary = "Some JWT-protected endpoint",
+    security = @SecurityRequirement(name = "bearerAuth")
+)
 @RequestMapping("/api/workouts")
 public class WorkoutController {
 
