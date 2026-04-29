@@ -1,4 +1,3 @@
-// filepath: c:\Users\tcf895\testing\README.md
 # Testing Spring Boot API
 
 ## Overview
@@ -12,7 +11,7 @@ This project is a Spring Boot REST API with JWT authentication and MongoDB integ
 - RESTful endpoints for games, workouts, dashboard, etc.
 - Swagger UI for API documentation
 
-## Running the Application
+## Running the Application Locally
 
 1. Configure your MongoDB URI and credentials in `src/main/resources/application.properties`.
 2. Build and run the project:
@@ -22,6 +21,13 @@ This project is a Spring Boot REST API with JWT authentication and MongoDB integ
 3. Access the API at `http://localhost:8080/`.
 4. Access Swagger UI at `http://localhost:8080/swagger-ui.html` or `/swagger-ui/index.html`.
 
+## Deployed Application
+
+The application is deployed on Render:
+
+- **Base URL:** [https://workout-app-rmfp.onrender.com](https://workout-app-rmfp.onrender.com)
+- **Swagger UI:** [https://workout-app-rmfp.onrender.com/swagger-ui.html](https://workout-app-rmfp.onrender.com/swagger-ui.html) or [https://workout-app-rmfp.onrender.com/swagger-ui/index.html](https://workout-app-rmfp.onrender.com/swagger-ui/index.html)
+
 ## Authentication
 
 - Obtain a JWT token via `/authenticate` using Basic Auth.
@@ -29,4 +35,4 @@ This project is a Spring Boot REST API with JWT authentication and MongoDB integ
 
 ## API Documentation
 
-See [Swagger UI](http://localhost:8080/swagger-ui.html) for interactive API docs.
+See [Swagger UI](https://workout-app-rmfp.onrender.com/swagger-ui.html) for interactive API docs.
