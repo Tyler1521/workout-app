@@ -28,6 +28,9 @@ public class AuthController {
         summary = "Basic Auth Required",
         security = @SecurityRequirement(name = "basicAuth")
     )
+
+    //test commit
+
     @PostMapping("/authenticate")
     public String createAuthenticationToken(HttpServletRequest request) {
         try {
