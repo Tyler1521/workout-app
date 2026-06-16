@@ -10,6 +10,11 @@ import java.util.List;
 public class CacheConfig {
     @Bean
     public LRUCache<String, List<Game>> myCustomCache() {
+        return new LRUCache<>(5, 5 * 60 * 1000);  // Thread-safe version
+    }
+
+    @Bean
+    public LRUCache<String, Game> myCustomCache2() {
         return new LRUCache<>(10, 5 * 60 * 1000);  // Thread-safe version
     }
 }
