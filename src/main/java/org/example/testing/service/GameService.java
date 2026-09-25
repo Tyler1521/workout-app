@@ -37,15 +37,29 @@ public class GameService {
     private static final String CACHE_KEY = "allGames";
 
     public String addGame(GameRequest request) {
-        log.info("Publishing new game to queue: {}", request);
+        log.info("Adding new game: {}", request);
+
+        Game game = new Game();
         try {
-            String message = objectMapper.writeValueAsString(request);
-            redisMessagePublisher.publish(message);
-            return "Game request queued";
+
+            //String message = objectMapper.writeValueAsString(request);
+            //redisMessagePublisher.publish(message);
+            
+            game.setDate(request.getDate());
+            game.setPoints(request.getPoints());
+            game.setRebounds(request.getRebounds());
+            game.setAssists(request.getAssists());
+            gameRepository.save(game);
+
+            gameCache.removeAll("allGames");
+            log.info("Stale cache evicted for key: {}", CACHE_KEY);
         } catch (Exception e) {
-            log.error("Failed to publish game request: {}", e.getMessage(), e);
-            throw new RuntimeException("Failed to queue game request: " + e.getMessage());
+            log.error("Failed to fetch game stats: {}", e.getMessage(), e);
+            throw new RuntimeException("Failed to add game: " + e.getMessage());
         }
+
+        log.info("game added");
+        return "Game added: " + game.getId();
     }
 
     public Game getGameById(String id) {
