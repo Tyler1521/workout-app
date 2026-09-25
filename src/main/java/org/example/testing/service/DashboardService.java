@@ -20,7 +20,7 @@ public class DashboardService {
     @Autowired
     private GameRepository gameRepository;
 
-    @Cacheable(value = "dashboard")
+    //@Cacheable(value = "dashboard")
     public DashboardResponse getDashboardData() {
         log.info("get dashboard data");
 
